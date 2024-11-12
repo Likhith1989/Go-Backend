@@ -3,15 +3,20 @@ package databases
 import (
 	"context"
 	"fmt"
+	"os"
 
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-const uri = "mongodb+srv://likhithb04:liki2004@cluster0.wogxcs8.mongodb.net/"
-
 func ConnectDB() *mongo.Client {
+	err := godotenv.Load()
+	if err != nil {
+		panic(err)
+	}
+	uri := os.Getenv("DBURL")
 	// Use the SetServerAPIOptions() method to set the Stable API version to 1
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	opts := options.Client().ApplyURI(uri).SetServerAPIOptions(serverAPI)

@@ -1,0 +1,38 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Build artifacts
+bin/
+dist/
+
+# Vendor dependencies (for Go modules)
+vendor/
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.swp
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+
+# Go workspace specific
+*.env
+.DS_Store
+coverage.out
+
+# Go modules
+go.sum
+
